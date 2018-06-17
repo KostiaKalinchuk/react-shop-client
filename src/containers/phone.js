@@ -23,7 +23,14 @@ class Phone extends Component {
         'weight',
         'display',
         'battery',
-        'memory'
+        'memory',
+        'color',
+        'system',
+        'connection',
+        'material',
+        'navigation',
+        'audio',
+        'video'
       ])
     )(phone);
 
@@ -53,11 +60,29 @@ class Phone extends Component {
             />
           </div>
           <div className='col-md-6'>
-            {this.renderFields()}
+            {/*{this.renderFields()}*/}
+
+
+              <p>Камера: {phone.camera}</p>
+              <p>Розміри: {phone.size}</p>
+              <p>Вага: {phone.weight}</p>
+              <p>Дисплей: {phone.display}</p>
+              <p>Ємкість акумулятора: {phone.battery}</p>
+              <p>Пам'ять: {phone.memory}</p>
+              <p>Колір: {phone.color}</p>
+              <p>Операційна система: {phone.system}</p>
+              <p>Тип з'язку: {phone.connection}</p>
+              <p>Матеріал корпуса: {phone.material}</p>
+              <p>Навігаційні можливості: {phone.navigation}</p>
+              <p>Аудіо вихід: {phone.audio}</p>
+              <p>Відеопроцесор: {phone.video}</p>
+
+
+
           </div>
         </div>
         <div className='caption-full'>
-          <h4 className='pull-right'>${phone.price}</h4>
+          <h4 className='pull-right'>{phone.price} грн</h4>
           <h4>{phone.name}</h4>
           <p>{phone.description}</p>
         </div>
@@ -69,19 +94,20 @@ class Phone extends Component {
     const {phone, addPhoneToBasket} = this.props;
     return (
       <div>
-        <p className='lead'>Quick shop</p>
+        {/*<p className='lead'>Quick shop</p>*/}
         <BasketCart />
-        <div className='form-group'>
-          <h1>{phone.name}</h1>
-          <h2>${phone.price}</h2>
-        </div>
-        <Link to='/' className='btn btn-info btn-block'>Back to store</Link>
+        {/*<div className='form-group'>*/}
+          {/*<h1>{phone.name}</h1>*/}
+          {/*<h2>{phone.price} грн</h2>*/}
+        {/*</div>*/}
+          <p></p>
+        <Link to='/' className='btn btn-info btn-block'>На головну</Link>
         <button
           type='button'
           className='btn btn-success btn-block'
           onClick={() => addPhoneToBasket(phone.id)}
         >
-          Add to cart
+          Додати в кошик
         </button>
       </div>
     )
