@@ -6,11 +6,23 @@ import {getTotalBasketCount} from "../selectors";
 // import categories from './mockCategories'
 
 export const fetchPhones = async () => {
-    const {body} = await request.get(
-        'http://www.mocky.io/v2/5918b9461200001f1040dbeb'
-    );
+    // const {body} = await request.get(
+    //     'http://www.mocky.io/v2/5918b9461200001f1040dbeb'
+    // );
     // console.log(body.phones);
-    return body.phones
+    // return body.phones
+
+
+    const fetch = await request.get(
+        'http://shop-api.local/phones.php'
+    );
+
+    const phones = JSON.parse(fetch.text);
+
+    console.log(phones);
+
+    return phones
+
 };
 
 export const loadMorePhones = async ({offset}) => {
@@ -20,10 +32,10 @@ export const loadMorePhones = async ({offset}) => {
 };
 
 export const fetchPhoneById = async (id) => {
-    return new Promise((resolve, reject) => {
-        const phone = R.find(R.propEq('id', id), phones);
-        resolve(phone)
-    })
+    // return new Promise((resolve, reject) => {
+    //     const phone = R.find(R.propEq('id', id), phones);
+    //     resolve(phone)
+    // })
 };
 
 export const fetchCategories = async () => {
@@ -42,8 +54,11 @@ export const fetchCategories = async () => {
     );
 
     const categories = JSON.parse(fetch.text);
-    // console.log(event);
-    // console.log(g.text);
+
+
+    console.log(categories);
+
+
     return categories
 
 
