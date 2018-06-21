@@ -1,9 +1,8 @@
 import R from 'ramda'
 import request from 'superagent'
 
-// import phones from './mockPhones'
 import {getTotalBasketCount} from "../selectors";
-// import categories from './mockCategories'
+
 
 // donne
 export const fetchPhones = async () => {
@@ -22,6 +21,8 @@ export const fetchPhones = async () => {
 
     return phones
 };
+
+
 
 // пагінація
 export const loadMorePhones = async ({offset}) => {

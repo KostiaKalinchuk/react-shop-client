@@ -8,7 +8,7 @@ const Header = () => (
 
                 <ul className='nav__menu'>
                     <li><Link to='/'>Головна</Link></li>
-                    <li> <Link to='/about'>Про компанію</Link></li>
+                    <li> <Link to='/about'>Запитання та відповіді</Link></li>
                     <li><Link to='/contacts'>Контакти</Link></li>
                 </ul>
             </div>
