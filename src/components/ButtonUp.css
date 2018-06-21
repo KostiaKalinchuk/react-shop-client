@@ -1,0 +1,39 @@
+.buttonTop {
+    position: fixed;
+    display: inline-block;
+    right: 30px;
+    bottom: 70px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s, background-color 0.5s;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid #f6731c;
+}
+
+.buttonTop:hover {
+    background: rgba(246, 115, 48, 0.5);
+}
+
+.buttonTop_show {
+    opacity: 1;
+}
+
+.arrow {
+    border: 8px solid transparent;
+    border-top-color: #687685;
+    margin: 0;
+    padding: 0;
+    float: left;
+    transform: rotate(180deg) translate(0px, 5px);
+    -webkit-transform: rotate(180deg) translate(0px, 5px);
+    -moz-transform: rotate(180deg) translate(0px, 5px);
+    -o-transform: rotate(180deg) translate(0px, 5px);
+    -ms-transform: rotate(180deg) translate(0px, 5px) translate(0px, 5px);
+}

@@ -28,7 +28,6 @@ class Search extends Component {
   render () {
     return (
       <div className='well blosd'>
-        {/*<h3 className='lead'>Пошук</h3>*/}
         <div className='input-group'>
           <form onSubmit={this.handleSubmit}>
             <input

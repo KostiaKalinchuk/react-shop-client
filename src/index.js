@@ -14,9 +14,9 @@ import Layout from './containers/layout'
 import Phones from './containers/phones'
 import Phone from './containers/phone'
 import Basket from './containers/basket'
-
 import About from './containers/about'
 import Contacts from './containers/contacts'
+
 
 const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk)
