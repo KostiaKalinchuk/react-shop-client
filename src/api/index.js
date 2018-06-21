@@ -13,11 +13,9 @@ export const fetchPhones = async () => {
     // console.log(body.phones);
     // return body.phones
 
-
     const fetch = await request.get(
         'http://shop-api.local/phones.php'
     );
-
     const phones = JSON.parse(fetch.text);
 
     // console.log(phones);
@@ -26,11 +24,21 @@ export const fetchPhones = async () => {
 };
 
 // пагінація
-// export const loadMorePhones = async ({offset}) => {
-//     return new Promise(resolve => {
-//         resolve(phones)
-//     })
-// };
+export const loadMorePhones = async ({offset}) => {
+
+    const fetch = await request.get(
+        `http://shop-api.local/phones.php?limit=10&offset=${offset}`
+    );
+
+    const phones = JSON.parse(fetch.text);
+
+
+    return new Promise(resolve => {
+        resolve(phones);
+        console.log(offset);
+    })
+};
+
 
 
 // donne
@@ -43,7 +51,7 @@ export const fetchPhoneById = async (id) => {
 
     const phones = JSON.parse(fetch.text);
 
-    console.log(phones);
+    // console.log(phones);
 
     return new Promise((resolve) => {
         const phone = R.find(R.propEq('id', id), phones);

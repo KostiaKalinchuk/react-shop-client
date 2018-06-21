@@ -10,7 +10,7 @@ import {
   getActiveCategoryId
 } from '../selectors'
 
-// alert(123);
+
 
 const Categories = ({categories, activeCategoryId}) => {
 

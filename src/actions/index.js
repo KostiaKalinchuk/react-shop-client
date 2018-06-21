@@ -25,10 +25,10 @@ import {
 } from '../api'
 
 export const fetchPhones = () => async dispatch => {
-  dispatch({type: FETCH_PHONES_START})
+  dispatch({type: FETCH_PHONES_START});
 
   try {
-    const phones = await fetchPhonesApi()
+    const phones = await fetchPhonesApi();
     dispatch({
       type: FETCH_PHONES_SUCCESS,
       payload: phones
@@ -63,10 +63,10 @@ export const loadMorePhones = () => async (dispatch, getState) => {
 };
 
 export const fetchPhoneById = (id) => async dispatch => {
-  dispatch({type: FETCH_PHONE_BY_ID_START})
+  dispatch({type: FETCH_PHONE_BY_ID_START});
 
   try {
-    const phone = await fetchPhoneByIdApi(id)
+    const phone = await fetchPhoneByIdApi(id);
     dispatch({
       type: FETCH_PHONE_BY_ID_SUCCESS,
       payload: phone
@@ -78,27 +78,27 @@ export const fetchPhoneById = (id) => async dispatch => {
       error: true
     })
   }
-}
+};
 
 export const addPhoneToBasket = id => dispatch => {
   dispatch({
     type: ADD_PHONE_TO_BASKET,
     payload: id
   })
-}
+};
 
 export const searchPhone = (text) => dispatch => {
   dispatch({
     type: SEARCH_PHONE,
     payload: text
   })
-}
+};
 
 export const fetchCategories = () => async dispatch => {
-  dispatch({type: FETCH_CATEGORIES_START})
+  dispatch({type: FETCH_CATEGORIES_START});
 
   try {
-    const phones = await fetchCategoriesApi()
+    const phones = await fetchCategoriesApi();
     dispatch({
       type: FETCH_CATEGORIES_SUCCESS,
       payload: phones
@@ -110,22 +110,22 @@ export const fetchCategories = () => async dispatch => {
       error: true
     })
   }
-}
+};
 
 export const removePhoneFromBasket = id => async dispatch => {
   dispatch({
     type: REMOVE_PHONE_FROM_BASKET,
     payload: id
   })
-}
+};
 
 export const cleanBasket = () => dispatch => {
   dispatch({
     type: CLEAN_BASKET
   })
-}
+};
 
 
 export const basketCheckout = phones => () => {
   alert(JSON.stringify(phones))
-}
+};

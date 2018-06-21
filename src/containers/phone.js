@@ -6,50 +6,63 @@ import {Link} from 'react-router'
 import {getPhoneById} from '../selectors'
 import {fetchPhoneById, addPhoneToBasket} from '../actions'
 import BasketCart from '../components/BasketCart'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class Phone extends Component {
   componentDidMount () {
     this.props.fetchPhoneById(this.props.params.id)
   }
 
-  renderFields () {
-    const {phone} = this.props;
-    const columnFields = R.compose(
-      R.toPairs,
-      R.pick([
-        'cpu',
-        'camera',
-        'size',
-        'weight',
-        'display',
-        'battery',
-        'memory',
-        'color',
-        'system',
-        'connection',
-        'material',
-        'navigation',
-        'audio',
-        'video'
-      ])
-    )(phone);
-
-    return columnFields.map(([key, value]) => (
-      <div className='column' key={key}>
-        <div className='ab-details-title'>
-          <p>{key}</p>
-        </div>
-        <div className='ab-details-info'>
-          {value}
-        </div>
-      </div>
-    ))
-  }
+  // renderFields () {
+  //   const {phone} = this.props;
+  //   const columnFields = R.compose(
+  //     R.toPairs,
+  //     R.pick([
+  //       'cpu',
+  //       'camera',
+  //       'size',
+  //       'weight',
+  //       'display',
+  //       'battery',
+  //       'memory',
+  //       'color',
+  //       'system',
+  //       'connection',
+  //       'material',
+  //       'navigation',
+  //       'audio',
+  //       'video'
+  //     ])
+  //   )(phone);
+  //
+  //   return columnFields.map(([key, value]) => (
+  //     <div className='column' key={key}>
+  //       <div className='ab-details-title'>
+  //         <p>{key}</p>
+  //       </div>
+  //       <div className='ab-details-info'>
+  //         {value}
+  //       </div>
+  //     </div>
+  //   ))
+  // }
 
   renderContent () {
     const {phone} = this.props;
 
     return (
+
+
+
+
+
+
+
+
+
+
+
       <div className='thumbnail'>
         <div className='row'>
           <div className='col-md-6'>
@@ -87,6 +100,9 @@ class Phone extends Component {
           <p>{phone.description}</p>
         </div>
       </div>
+
+
+
     )
   }
 
@@ -94,15 +110,9 @@ class Phone extends Component {
     const {phone, addPhoneToBasket} = this.props;
     return (
       <div>
-        {/*<p className='lead'>Quick shop</p>*/}
-        <BasketCart />
-        {/*<div className='form-group'>*/}
-          {/*<h1>{phone.name}</h1>*/}
-          {/*<h2>{phone.price} грн</h2>*/}
-        {/*</div>*/}
-          <p></p>
-        <Link to='/' className='btn btn-info btn-block'>На головну</Link>
-        <button
+          <p><BasketCart /></p>
+
+          <button
           type='button'
           className='btn btn-success btn-block'
           onClick={() => addPhoneToBasket(phone.id)}
@@ -117,6 +127,7 @@ class Phone extends Component {
     const {phone} = this.props;
     return (
       <div className='view-container'>
+          <Header />
         <div className='container'>
           <div className='row'>
             <div className='col-md-9'>
@@ -127,6 +138,7 @@ class Phone extends Component {
             </div>
           </div>
         </div>
+          <Footer />
       </div>
     )
   }

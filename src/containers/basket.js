@@ -3,6 +3,9 @@ import {connect} from 'react-redux'
 import R from 'ramda'
 import {Link} from 'react-router'
 
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 import {
   getTotalBasketPrice,
   getBasketPhonesWithCount,
@@ -104,6 +107,7 @@ const Basket = ({
 
   return (
     <div className='view-container'>
+      <Header />
       <div className='container'>
         <div className='row'>
           <div className='col-md-9'>
@@ -114,24 +118,25 @@ const Basket = ({
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 
-}
+};
 
 const mapStateToProps = state => {
   return {
     phones: getBasketPhonesWithCount(state),
     totalPrice: getTotalBasketPrice(state)
   }
-}
+};
 
 const mapDispatchToProps = {
   basketCheckout,
   removePhoneFromBasket,
   cleanBasket
 
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Basket)
 

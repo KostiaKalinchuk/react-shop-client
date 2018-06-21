@@ -15,6 +15,9 @@ import Phones from './containers/phones'
 import Phone from './containers/phone'
 import Basket from './containers/basket'
 
+import About from './containers/about'
+import Contacts from './containers/contacts'
+
 const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk)
 ));
@@ -30,6 +33,8 @@ ReactDOM.render(
       </Route>
       <Route path='/phones/:id' component={Phone}/>
       <Route path='/basket' component={Basket} />
+      <Route path='/about' component={About} />
+      <Route path='/contacts' component={Contacts} />
     </Router>
   </Provider>,
   document.getElementById('root')
