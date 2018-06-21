@@ -65,44 +65,46 @@ class Phone extends Component {
 
       <div className='thumbnail'>
         <div className='row'>
-          <div className='col-md-6'>
+          <div className='col-md-4'>
             <img
               className='img-thumbnail'
               src={phone.image}
               alt={phone.name}
             />
           </div>
-          <div className='col-md-6'>
+
+
+          <div className='col-md-8'>
             {/*{this.renderFields()}*/}
+              <h3 className='pull-left'>{phone.name}</h3>
+              <h4 className='pull-right price'>{phone.price} грн</h4>
 
 
-              <p>Камера: {phone.camera}</p>
-              <p>Розміри: {phone.size}</p>
-              <p>Вага: {phone.weight}</p>
-              <p>Дисплей: {phone.display}</p>
-              <p>Ємкість акумулятора: {phone.battery}</p>
-              <p>Пам'ять: {phone.memory}</p>
-              <p>Колір: {phone.color}</p>
-              <p>Операційна система: {phone.system}</p>
-              <p>Тип з'язку: {phone.connection}</p>
-              <p>Матеріал корпуса: {phone.material}</p>
-              <p>Навігаційні можливості: {phone.navigation}</p>
-              <p>Аудіо вихід: {phone.audio}</p>
-              <p>Відеопроцесор: {phone.video}</p>
+              <div className='phone-info'>
+              <h4>Основні характеристики:</h4>
+              <p><b>Камера:</b> {phone.camera}</p>
+              <p><b>Розміри:</b> {phone.size}</p>
+              <p><b>Вага:</b> {phone.weight}</p>
+              <p><b>Дисплей:</b> {phone.display}</p>
+              <p><b>Ємкість акумулятора:</b> {phone.battery}</p>
+              <p><b>Пам'ять:</b> {phone.memory}</p>
 
+              </div>
 
 
           </div>
         </div>
         <div className='caption-full'>
-          <h4 className='pull-right'>{phone.price} грн</h4>
-          <h4>{phone.name}</h4>
-          <p>{phone.description}</p>
+            <p><b>Колір:</b> {phone.color}</p>
+            <p><b>Операційна система:</b> {phone.system}</p>
+            <p><b>Тип з'язку:</b> {phone.connection}</p>
+            <p><b>Матеріал корпуса:</b> {phone.material}</p>
+            <p><b>Навігаційні можливості:</b> {phone.navigation}</p>
+            <p><b>Аудіо вихід:</b> {phone.audio}</p>
+            <p><b>Відеопроцесор:</b> {phone.video}</p>
+            <p><b>Додаткова інформація:</b> {phone.description}</p>
         </div>
       </div>
-
-
-
     )
   }
 
@@ -111,7 +113,6 @@ class Phone extends Component {
     return (
       <div>
           <p><BasketCart /></p>
-
           <button
           type='button'
           className='btn btn-success btn-block'
