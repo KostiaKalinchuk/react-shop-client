@@ -52,17 +52,6 @@ class Phone extends Component {
     const {phone} = this.props;
 
     return (
-
-
-
-
-
-
-
-
-
-
-
       <div className='thumbnail'>
         <div className='row'>
           <div className='col-md-4'>
@@ -72,37 +61,31 @@ class Phone extends Component {
               alt={phone.name}
             />
           </div>
-
-
           <div className='col-md-8'>
             {/*{this.renderFields()}*/}
               <h3 className='pull-left'>{phone.name}</h3>
               <h4 className='pull-right price'>{phone.price} грн</h4>
-
-
               <div className='phone-info'>
               <h4>Основні характеристики:</h4>
-              <p><b>Камера:</b> {phone.camera}</p>
-              <p><b>Розміри:</b> {phone.size}</p>
-              <p><b>Вага:</b> {phone.weight}</p>
               <p><b>Дисплей:</b> {phone.display}</p>
-              <p><b>Ємкість акумулятора:</b> {phone.battery}</p>
+              <p><b>Камера:</b> {phone.camera}</p>
+              <p><b>Операційна система:</b> {phone.system}</p>
               <p><b>Пам'ять:</b> {phone.memory}</p>
-
+              <p><b>Відеопроцесор:</b> {phone.video}</p>
               </div>
-
-
           </div>
         </div>
         <div className='caption-full'>
-            <p><b>Колір:</b> {phone.color}</p>
-            <p><b>Операційна система:</b> {phone.system}</p>
-            <p><b>Тип з'язку:</b> {phone.connection}</p>
+            <h4>Додаткова інформація:</h4>
             <p><b>Матеріал корпуса:</b> {phone.material}</p>
+            <p><b>Колір:</b> {phone.color}</p>
+            <p><b>Розміри:</b> {phone.size}</p>
+            <p><b>Вага:</b> {phone.weight}</p>
+            <p><b>Тип з'язку:</b> {phone.connection}</p>
             <p><b>Навігаційні можливості:</b> {phone.navigation}</p>
             <p><b>Аудіо вихід:</b> {phone.audio}</p>
-            <p><b>Відеопроцесор:</b> {phone.video}</p>
-            <p><b>Додаткова інформація:</b> {phone.description}</p>
+            <p><b>Ємкість акумулятора:</b> {phone.battery}</p>
+            <p>{phone.description}</p>
         </div>
       </div>
     )

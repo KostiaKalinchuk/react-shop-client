@@ -7,7 +7,7 @@ const Contacts = () => (
     <div className='view-container'>
         <Header />
         <div className='container'>
-            delivery
+            under development
         </div>
         <Footer />
     </div>

@@ -127,5 +127,5 @@ export const cleanBasket = () => dispatch => {
 
 
 export const basketCheckout = phones => () => {
-  alert(JSON.stringify(phones))
+  console.log(JSON.stringify(phones))
 };
