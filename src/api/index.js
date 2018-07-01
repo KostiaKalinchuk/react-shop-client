@@ -13,7 +13,7 @@ export const fetchPhones = async () => {
     // return body.phones
 
     const fetch = await request.get(
-        'http://shop-api.local/phones.php'
+        'http://shop-api.local/API/phones.php'
     );
     const phones = JSON.parse(fetch.text);
 
@@ -24,11 +24,11 @@ export const fetchPhones = async () => {
 
 
 
-// пагінація
+// in work
 export const loadMorePhones = async ({offset}) => {
 
     const fetch = await request.get(
-        `http://shop-api.local/phones.php?limit=10&offset=${offset}`
+        `http://shop-api.local/API/phones.php?limit=10&offset=${offset}`
     );
 
     const phones = JSON.parse(fetch.text);
@@ -47,7 +47,7 @@ export const loadMorePhones = async ({offset}) => {
 export const fetchPhoneById = async (id) => {
 
     const fetch = await request.get(
-        'http://shop-api.local/phones.php'
+        'http://shop-api.local/API/phones.php'
     );
 
     const phones = JSON.parse(fetch.text);
@@ -64,7 +64,7 @@ export const fetchPhoneById = async (id) => {
 export const fetchCategories = async () => {
 
     const fetch = await request.get(
-        'http://shop-api.local/'
+        'http://shop-api.local/API/index.php'
     );
 
     const categories = JSON.parse(fetch.text);

@@ -639,3 +639,9 @@ footer {
 .phone-info {
     margin-top: 80px;
 }
+
+.footer-admin {
+    color: white;
+    font-size: 12px;
+    line-height: 35px;
+}

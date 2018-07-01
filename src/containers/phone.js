@@ -69,7 +69,7 @@ class Phone extends Component {
               <h4>Основні характеристики:</h4>
               <p><b>Дисплей:</b> {phone.display}</p>
               <p><b>Камера:</b> {phone.camera}</p>
-              <p><b>Операційна система:</b> {phone.system}</p>
+              <p><b>Процесор:</b> {phone.cpu}</p>
               <p><b>Пам'ять:</b> {phone.memory}</p>
               <p><b>Відеопроцесор:</b> {phone.video}</p>
               </div>
@@ -77,6 +77,7 @@ class Phone extends Component {
         </div>
         <div className='caption-full'>
             <h4>Додаткова інформація:</h4>
+            <p><b>Операційна система:</b> {phone.system}</p>
             <p><b>Матеріал корпуса:</b> {phone.material}</p>
             <p><b>Колір:</b> {phone.color}</p>
             <p><b>Розміри:</b> {phone.size}</p>
