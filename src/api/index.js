@@ -28,15 +28,15 @@ export const fetchPhones = async () => {
 export const loadMorePhones = async ({offset}) => {
 
     const fetch = await request.get(
-        `http://shop-api.local/API/phones.php?limit=10&offset=${offset}`
+        `http://shop-api.local/API/phones.php?offset=${offset}`
     );
 
     const phones = JSON.parse(fetch.text);
 
-
     return new Promise(resolve => {
         resolve(phones);
         console.log(offset);
+        // console.log(fetch.text);
     })
 };
 
@@ -64,7 +64,7 @@ export const fetchPhoneById = async (id) => {
 export const fetchCategories = async () => {
 
     const fetch = await request.get(
-        'http://shop-api.local/API/index.php'
+        'http://shop-api.local/API/categories.php'
     );
 
     const categories = JSON.parse(fetch.text);
