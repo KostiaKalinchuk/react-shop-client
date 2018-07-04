@@ -7,26 +7,6 @@ body {
     min-height: 100%;
 }
 
-/*#page-preloader {*/
-    /*position: fixed;*/
-    /*left: 0;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*background: #fff;*/
-    /*z-index: 100500;*/
-/*}*/
-
-/*#page-preloader .spinner {*/
-    /*width: 64px;*/
-    /*height: 64px;*/
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*top: 50%;*/
-    /*background: url('../public/images/preloader.gif') no-repeat 50% 50%;*/
-    /*margin: -32px 0 0 -32px;*/
-/*}*/
-
 .cart-order{
     margin:0 auto;
 }
@@ -644,4 +624,55 @@ footer {
     color: white;
     font-size: 12px;
     line-height: 35px;
+}
+
+
+
+
+h1 {
+    text-align: center;
+    color: #222;
+}
+
+.feedback-form {
+    max-width: 500px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.feedback-form div {
+    display: flex;
+    flex-flow: row nowrap;
+    line-height: 2em;
+    margin: 5px;
+}
+
+.feedback-form label {
+      color: #333;
+      width: 110px;
+      font-size: 1em;
+      line-height: 32px;
+  }
+
+.feedback-form input, select, textarea {
+      flex: 1;
+      padding: 3px 5px;
+      font-size: 1em;
+      margin-left: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+  }
+
+.feedback-form .buttons {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      margin-top: 15px;
+  }
+
+.feedback-form button {
+    margin: 0 10px;
 }

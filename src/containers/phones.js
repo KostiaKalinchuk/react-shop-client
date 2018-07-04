@@ -64,7 +64,9 @@ class Phones extends Component {
     return (
       <div>
         <div className='books row'>
-          {phones.map((phone, index) => this.renderPhone(phone, index))}
+          {/*{phones.map((phone, index) => this.renderPhone(phone, index))}*/}
+          {phones.map((phone, index) => this.renderPhone(phone, index)).reverse()}
+            {/*{console.log(phones.map((phone, index) => this.renderPhone(phone, index)))}*/}
         </div>
         <div className='row'>
           <div className='col-md-12'>

@@ -23,7 +23,7 @@ export const fetchPhones = async () => {
 };
 
 
-
+const phones = [];
 // in work
 export const loadMorePhones = async ({offset}) => {
 
@@ -33,10 +33,15 @@ export const loadMorePhones = async ({offset}) => {
 
     const phones = JSON.parse(fetch.text);
 
+
+
+
+
     return new Promise(resolve => {
         resolve(phones);
         console.log(offset);
-        // console.log(fetch.text);
+        // console.log(fetch.text);x
+        console.log(phones);
     })
 };
 
