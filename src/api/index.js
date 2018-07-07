@@ -23,9 +23,11 @@ export const fetchPhones = async () => {
 };
 
 
-const phones = [];
+
 // in work
 export const loadMorePhones = async ({offset}) => {
+
+    // const phones = [];
 
     const fetch = await request.get(
         `http://shop-api.local/API/phones.php?offset=${offset}`

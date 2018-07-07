@@ -9,6 +9,7 @@ const Contacts = () => (
         <Header />
         <div className='container'>
          <FeedbackForm />
+            {/*Контакти*/}
         </div>
         <Footer />
     </div>

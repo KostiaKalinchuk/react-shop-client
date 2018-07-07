@@ -2,9 +2,16 @@ import React from "react";
 import {Form, Field} from "react-final-form";
 
 const onSubmit = async values => {
-    // await sleep(300);
-    // window.alert('Відправлено')
-    window.alert(JSON.stringify(values, 0, 2))
+    // console.log(JSON.stringify(values));
+    fetch('http://shop-api.local/API/feedbackForm.php', {
+        method: 'POST',
+        body: JSON.stringify(values),
+    }).then(res => {
+        if (res.status === 200) {
+            alert('Повідомлення надіслано');
+            location="/";
+        }
+    }).catch(err => err);
 };
 
 const FeedbackForm = () => (
@@ -14,8 +21,8 @@ const FeedbackForm = () => (
             onSubmit={onSubmit}
             validate={values => {
                 const errors = {};
-                if (!values.firstName) {
-                    errors.firstName = "Заповніть поле";
+                if (!values.name) {
+                    errors.name = "Заповніть поле";
                 }
                 if (!values.email) {
                     errors.email = "Заповніть поле";
@@ -25,11 +32,11 @@ const FeedbackForm = () => (
                 }
                 return errors;
             }}
-            render={({ handleSubmit, reset, submitting, pristine, values }) => (
+            render={({handleSubmit, reset, submitting, pristine, values}) => (
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label>Імя</label>
-                        <Field name="firstName" type="text" placeholder="First Name">
+                        <Field name="name" type="text" placeholder="Імя">
                             {obj => {
                                 return (
                                     <div>
@@ -65,11 +72,11 @@ const FeedbackForm = () => (
                     </div>
                     <div>
                         <label>Повідомлення</label>
-                        <Field name="message" type="textarea" placeholder="message">
+                        <Field name="message" type="text" placeholder="Ваше повідомлення">
                             {obj => {
                                 return (
                                     <div>
-                                        <input
+                                        <textarea
                                             {...obj.input}
                                             type={obj.type}
                                             placeholder={obj.placeholder}
@@ -81,9 +88,9 @@ const FeedbackForm = () => (
                             }}
                         </Field>
                     </div>
-                    <div className="buttons btn">
+                    <div className="button">
                         <button type="submit" disabled={submitting || pristine}>
-                        Надіслати повідомлення
+                            Надіслати повідомлення
                         </button>
                     </div>
                 </form>

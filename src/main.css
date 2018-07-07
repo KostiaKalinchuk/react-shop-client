@@ -635,8 +635,8 @@ h1 {
 }
 
 .feedback-form {
-    max-width: 500px;
-    margin: 10px auto;
+    max-width: 600px;
+    /*margin: 10px auto;*/
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -657,22 +657,24 @@ h1 {
       line-height: 32px;
   }
 
-.feedback-form input, select, textarea {
+.feedback-form input, textarea {
       flex: 1;
       padding: 3px 5px;
       font-size: 1em;
       margin-left: 15px;
       border: 1px solid #ccc;
       border-radius: 3px;
+      width: 300px;
   }
 
-.feedback-form .buttons {
+.feedback-form .button {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       margin-top: 15px;
   }
 
-.feedback-form button {
-    margin: 0 10px;
+.feedback-form span {
+    color: red;
+    margin-left: 5px;
 }
