@@ -1,6 +1,7 @@
 import React from "react";
 import {Form, Field} from "react-final-form";
 
+
 const onSubmit = async values => {
     // console.log(JSON.stringify(values));
     fetch('http://shop-api.local/API/feedbackForm.php', {
@@ -15,7 +16,8 @@ const onSubmit = async values => {
 };
 
 const FeedbackForm = () => (
-    <div className='feedback-form'>
+    <div className='feedback col-md-12'>
+    <div className='feedback-form col-md-7'>
         <h1>Зворотній зв'язок </h1>
         <Form
             onSubmit={onSubmit}
@@ -96,6 +98,16 @@ const FeedbackForm = () => (
                 </form>
             )}
         />
+    </div>
+        <div className='feedback-info col-md-5'>
+            <h2>Контактна інформація</h2>
+            <p>(044) 500-00-00</p>
+            <p>(044) 505-89-89</p>
+            <p>0 (800) 309-444</p>
+
+            <p><b>Графік роботи кол-центру</b></p>
+            <p>с 8:00 до 21:00</p>
+        </div>
     </div>
 );
 

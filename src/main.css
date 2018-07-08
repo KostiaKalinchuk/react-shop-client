@@ -634,9 +634,7 @@ h1 {
     color: #222;
 }
 
-.feedback-form {
-    max-width: 600px;
-    /*margin: 10px auto;*/
+.feedback {
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -677,4 +675,8 @@ h1 {
 .feedback-form span {
     color: red;
     margin-left: 5px;
+}
+
+.feedback-info h2 {
+    font-size: 25px;
 }
