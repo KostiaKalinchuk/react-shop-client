@@ -79,7 +79,6 @@ const Basket = ({
         className='btn btn-info'
         to='/'
       >
-        {/*<span className='glyphicon glyphicon-info-sign'/>*/}
         <span>Продовжити покупки</span>
       </Link>
       {
@@ -92,6 +91,7 @@ const Basket = ({
             <span className='glyphicon glyphicon-trash' />
             Очистити кошик
           </button>
+
           <button
             className='btn btn-success'
             onClick={() => basketCheckout(phones)}
