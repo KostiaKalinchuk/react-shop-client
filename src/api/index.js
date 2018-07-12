@@ -37,13 +37,11 @@ export const loadMorePhones = async ({offset}) => {
 
 
 
-
-
     return new Promise(resolve => {
         resolve(phones);
-        console.log(offset);
-        // console.log(fetch.text);x
-        console.log(phones);
+
+        // console.log(offset);
+        // console.log(phones);
     })
 };
 
@@ -54,12 +52,12 @@ export const loadMorePhones = async ({offset}) => {
 export const fetchPhoneById = async (id) => {
 
     const fetch = await request.get(
-        'http://shop-api.local/API/phones.php'
+        'http://shop-api.local/API/phones.php?limit=100'
     );
 
     const phones = JSON.parse(fetch.text);
 
-    // console.log(phones);
+    console.log(phones);
 
     return new Promise((resolve) => {
         const phone = R.find(R.propEq('id', id), phones);
