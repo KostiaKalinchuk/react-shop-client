@@ -132,8 +132,9 @@ export const basketCheckout = phones => () => {
    console.log(JSON.stringify(phones));
 
 
+
     // console.log(JSON.stringify(values));
-    fetch('http://shop-api.local/API/orders.php', {
+    fetch('http://shop-api/API/orders.php', {
         method: 'POST',
         body: JSON.stringify(phones),
     }).then(res => {

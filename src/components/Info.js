@@ -1,6 +1,5 @@
 import React from 'react';
-import './Info.css';
-
+import '../css/Info.css';
 
 const tempData = [{
     title: "Чи є можливість замовити товар із доставкою в іншу країну?",

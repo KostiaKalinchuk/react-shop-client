@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./ButtonUp.css";
+import "../css/ButtonUp.css";
 
 class ButtonUp extends Component {
   componentDidMount() {
