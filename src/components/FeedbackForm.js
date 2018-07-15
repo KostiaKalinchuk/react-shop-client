@@ -3,7 +3,7 @@ import {Form, Field} from "react-final-form";
 
 const onSubmit = async values => {
 
-    fetch('http://shop-api.local/API/feedbackForm.php', {
+    fetch('https://app-1531673027.000webhostapp.com/API/feedbackForm.php', {
         method: 'POST',
         body: JSON.stringify(values),
     }).then(res => {

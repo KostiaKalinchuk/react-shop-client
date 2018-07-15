@@ -1,12 +1,10 @@
 import R from 'ramda'
 import request from 'superagent'
 
-// import {getTotalBasketCount} from "../selectors";
-
 export const fetchPhones = async () => {
 
     const fetch = await request.get(
-        'http://shop-api.local/API/phones.php'
+        'https://app-1531673027.000webhostapp.com/API/phones.php'
     );
     const phones = JSON.parse(fetch.text);
     return phones
@@ -15,7 +13,7 @@ export const fetchPhones = async () => {
 export const loadMorePhones = async ({offset}) => {
 
     const fetch = await request.get(
-        `http://shop-api.local/API/phones.php?offset=${offset}`
+        `https://app-1531673027.000webhostapp.com/API/phones.php?offset=${offset}`
     );
 
     const phones = JSON.parse(fetch.text);
@@ -27,7 +25,7 @@ export const loadMorePhones = async ({offset}) => {
 export const fetchPhoneById = async (id) => {
 
     const fetch = await request.get(
-        'http://shop-api.local/API/phones.php?limit=100'
+        'https://app-1531673027.000webhostapp.com/API/phones.php?limit=100'
     );
 
     const phones = JSON.parse(fetch.text);
@@ -41,7 +39,7 @@ export const fetchPhoneById = async (id) => {
 export const fetchCategories = async () => {
 
     const fetch = await request.get(
-        'http://shop-api.local/API/categories.php'
+        'https://app-1531673027.000webhostapp.com/API/categories.php'
     );
 
     const categories = JSON.parse(fetch.text);

@@ -127,7 +127,7 @@ export const cleanBasket = () => dispatch => {
 
 export const basketCheckout = phones => () => {
 
-    fetch('http://shop-api/API/orders.php', {
+    fetch('https://app-1531673027.000webhostapp.com/API/orders.php', {
         method: 'POST',
         body: JSON.stringify(phones),
     }).then(res => {
