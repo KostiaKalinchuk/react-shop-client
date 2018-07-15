@@ -7,11 +7,7 @@ import ButtonUp from '../components/ButtonUp'
 
 const Layout = ({children}) => (
     <div className='view-container'>
-
-
-
         <Header />
-
         <div className='container'>
             <div className='row'>
                 <div className='col-md-3'>

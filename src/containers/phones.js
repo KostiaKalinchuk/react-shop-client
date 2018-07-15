@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-// import R from 'ramda'
+
 import {Link} from 'react-router'
 
 import {
@@ -19,7 +19,6 @@ class Phones extends Component {
 
   renderPhone (phone, index) {
     const {addPhoneToBasket} = this.props;
-    // const shortDescription = `${R.take(60, phone.description)}...`;
 
     return (
       <div className='col-sm-4 col-lg-4 col-md-4 book-list' key={index}>
@@ -36,7 +35,6 @@ class Phones extends Component {
                 {phone.name}
               </Link>
             </h4>
-            {/*<p>{shortDescription}</p>*/}
             <p>{phone.display} / {phone.memory} / {phone.battery} / {phone.weight}</p>
             <p className='itemButton'>
               <button
@@ -58,15 +56,12 @@ class Phones extends Component {
     )
   }
 
-
   render () {
     const {phones, loadMorePhones} = this.props;
     return (
       <div>
         <div className='books row'>
-          {/*{phones.map((phone, index) => this.renderPhone(phone, index))}*/}
           {phones.map((phone, index) => this.renderPhone(phone, index)).reverse()}
-            {/*{console.log(phones.map((phone, index) => this.renderPhone(phone, index)))}*/}
         </div>
         <div className='row'>
           <div className='col-md-12'>
@@ -79,7 +74,6 @@ class Phones extends Component {
           </div>
         </div>
       </div>
-
     )
   }
 }

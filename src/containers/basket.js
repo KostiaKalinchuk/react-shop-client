@@ -104,7 +104,6 @@ const Basket = ({
     </div>
   );
 
-
   return (
     <div className='view-container'>
       <Header />

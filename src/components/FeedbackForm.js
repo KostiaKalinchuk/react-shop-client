@@ -1,9 +1,8 @@
 import React from "react";
 import {Form, Field} from "react-final-form";
 
-
 const onSubmit = async values => {
-    // console.log(JSON.stringify(values));
+
     fetch('http://shop-api.local/API/feedbackForm.php', {
         method: 'POST',
         body: JSON.stringify(values),

@@ -10,12 +10,7 @@ import {
   getActiveCategoryId
 } from '../selectors'
 
-
-
 const Categories = ({categories, activeCategoryId}) => {
-
-
-    // console.log(categories);
 
     const renderCategory = (category, index) => {
     const getActiveState = R.propEq('id', activeCategoryId);

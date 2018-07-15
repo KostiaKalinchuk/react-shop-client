@@ -17,7 +17,6 @@ import Basket from './containers/basket'
 import About from './containers/about'
 import Contacts from './containers/contacts'
 
-
 const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk)
 ));

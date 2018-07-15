@@ -125,25 +125,15 @@ export const cleanBasket = () => dispatch => {
   })
 };
 
-
 export const basketCheckout = phones => () => {
 
-
-   console.log(JSON.stringify(phones));
-
-
-
-    // console.log(JSON.stringify(values));
     fetch('http://shop-api/API/orders.php', {
         method: 'POST',
         body: JSON.stringify(phones),
     }).then(res => {
         if (res.status === 200) {
-
             alert('Замовлення оформлено');
             location="/";
-
-
         }
     }).catch(err => err);
 };

@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import R from 'ramda'
-import {Link} from 'react-router'
 
 import {getPhoneById} from '../selectors'
 import {fetchPhoneById, addPhoneToBasket} from '../actions'
@@ -13,40 +11,6 @@ class Phone extends Component {
   componentDidMount () {
     this.props.fetchPhoneById(this.props.params.id)
   }
-
-  // renderFields () {
-  //   const {phone} = this.props;
-  //   const columnFields = R.compose(
-  //     R.toPairs,
-  //     R.pick([
-  //       'cpu',
-  //       'camera',
-  //       'size',
-  //       'weight',
-  //       'display',
-  //       'battery',
-  //       'memory',
-  //       'color',
-  //       'system',
-  //       'connection',
-  //       'material',
-  //       'navigation',
-  //       'audio',
-  //       'video'
-  //     ])
-  //   )(phone);
-  //
-  //   return columnFields.map(([key, value]) => (
-  //     <div className='column' key={key}>
-  //       <div className='ab-details-title'>
-  //         <p>{key}</p>
-  //       </div>
-  //       <div className='ab-details-info'>
-  //         {value}
-  //       </div>
-  //     </div>
-  //   ))
-  // }
 
   renderContent () {
     const {phone} = this.props;
@@ -62,7 +26,6 @@ class Phone extends Component {
             />
           </div>
           <div className='col-md-8'>
-            {/*{this.renderFields()}*/}
               <h3 className='pull-left'>{phone.name}</h3>
               <h4 className='pull-right price'>{phone.price} грн</h4>
               <div className='phone-info'>

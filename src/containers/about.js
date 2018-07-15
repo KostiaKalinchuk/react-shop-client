@@ -8,7 +8,7 @@ const About = () => (
     <div className='view-container'>
         <Header />
         <div className='container'>
-            <Info />
+        <Info />
         </div>
         <Footer />
     </div>
