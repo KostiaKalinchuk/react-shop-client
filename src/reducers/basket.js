@@ -1,14 +1,14 @@
-import R from 'ramda'
+import R from "ramda";
 
 import {
   ADD_PHONE_TO_BASKET,
   REMOVE_PHONE_FROM_BASKET,
   CLEAN_BASKET
-} from '../actionTypes'
+} from "../actionTypes";
 
 const initialState = [];
 
-export default (state = initialState, {type, payload}) => {
+export default (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_PHONE_TO_BASKET:
       return R.append(payload, state);
@@ -17,6 +17,6 @@ export default (state = initialState, {type, payload}) => {
     case CLEAN_BASKET:
       return [];
     default:
-      return state
+      return state;
   }
-}
+};

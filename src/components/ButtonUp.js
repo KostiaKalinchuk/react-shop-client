@@ -38,7 +38,7 @@ class ButtonUp extends Component {
           this.buttonTop = btn;
         }}
       >
-        <div className="arrow"></div>
+        <div className="arrow" />
       </div>
     );
   }

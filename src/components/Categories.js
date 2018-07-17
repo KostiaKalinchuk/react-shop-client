@@ -1,61 +1,50 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {Link, withRouter} from 'react-router'
-import {compose} from 'redux'
-import R from 'ramda'
-import classNames from 'classnames'
+import React from "react";
+import { connect } from "react-redux";
+import { Link, withRouter } from "react-router";
+import { compose } from "redux";
+import R from "ramda";
+import classNames from "classnames";
 
-import {
-  getCategories,
-  getActiveCategoryId
-} from '../selectors'
+import { getCategories, getActiveCategoryId } from "../selectors";
 
-const Categories = ({categories, activeCategoryId}) => {
-
-    const renderCategory = (category, index) => {
-    const getActiveState = R.propEq('id', activeCategoryId);
+const Categories = ({ categories, activeCategoryId }) => {
+  const renderCategory = (category, index) => {
+    const getActiveState = R.propEq("id", activeCategoryId);
 
     const linkClass = classNames({
-      'list-group-item': true,
-      'active': getActiveState(category)
+      "list-group-item": true,
+      active: getActiveState(category)
     });
 
     return (
-      <Link
-        to={`/categories/${category.id}`}
-        className={linkClass}
-        key={index}
-      >
+      <Link to={`/categories/${category.id}`} className={linkClass} key={index}>
         {category.name}
       </Link>
-    )
+    );
   };
 
   const renderAllCategory = () => {
     const linkClass = classNames({
-      'list-group-item': true,
-      'active': R.isNil(activeCategoryId)
+      "list-group-item": true,
+      active: R.isNil(activeCategoryId)
     });
 
     return (
-      <Link
-        to='/'
-        className={linkClass}
-      >
+      <Link to="/" className={linkClass}>
         Всі смартфони
       </Link>
-    )
+    );
   };
 
   return (
-    <div className='well'>
+    <div className="well">
       <h4>Бренд</h4>
-      <div className='list-group'>
+      <div className="list-group">
         {renderAllCategory()}
         {categories.map((category, index) => renderCategory(category, index))}
       </div>
     </div>
-  )
+  );
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -63,7 +52,4 @@ const mapStateToProps = (state, ownProps) => ({
   activeCategoryId: getActiveCategoryId(ownProps)
 });
 
-export default compose(
-  withRouter,
-  connect(mapStateToProps, null)
-)(Categories)
+export default compose(withRouter, connect(mapStateToProps, null))(Categories);

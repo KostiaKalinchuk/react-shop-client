@@ -1,25 +1,26 @@
-import './css/main.css'
+import "./css/main.css";
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {createStore, applyMiddleware} from 'redux'
-import {composeWithDevTools} from 'redux-devtools-extension'
-import thunk from 'redux-thunk'
-import {syncHistoryWithStore} from 'react-router-redux'
-import {Router, Route, browserHistory} from 'react-router'
-import {Provider} from 'react-redux'
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import { syncHistoryWithStore } from "react-router-redux";
+import { Router, Route, browserHistory } from "react-router";
+import { Provider } from "react-redux";
 
-import reducers from './reducers'
-import Layout from './containers/layout'
-import Phones from './containers/phones'
-import Phone from './containers/phone'
-import Basket from './containers/basket'
-import About from './containers/about'
-import Contacts from './containers/contacts'
+import reducers from "./reducers";
+import Layout from "./containers/layout";
+import Phones from "./containers/phones";
+import Phone from "./containers/phone";
+import Basket from "./containers/basket";
+import About from "./containers/about";
+import Contacts from "./containers/contacts";
 
-const store = createStore(reducers, composeWithDevTools(
-  applyMiddleware(thunk)
-));
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -27,14 +28,14 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route component={Layout}>
-        <Route path='/' component={Phones}/>
-        <Route path='/categories/:id' component={Phones}/>
+        <Route path="/" component={Phones} />
+        <Route path="/categories/:id" component={Phones} />
       </Route>
-      <Route path='/phones/:id' component={Phone}/>
-      <Route path='/basket' component={Basket} />
-      <Route path='/about' component={About} />
-      <Route path='/contacts' component={Contacts} />
+      <Route path="/phones/:id" component={Phone} />
+      <Route path="/basket" component={Basket} />
+      <Route path="/about" component={About} />
+      <Route path="/contacts" component={Contacts} />
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
-import BasketCart from './BasketCart'
-import Search from './Search'
-import Categories from './Categories'
+import BasketCart from "./BasketCart";
+import Search from "./Search";
+import Categories from "./Categories";
 
 const Sidebar = () => {
   return (
@@ -11,7 +11,7 @@ const Sidebar = () => {
       <Search />
       <Categories />
     </div>
-  )
+  );
 };
 
 export default Sidebar;

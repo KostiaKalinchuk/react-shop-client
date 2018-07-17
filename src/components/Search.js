@@ -1,50 +1,50 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import {connect} from 'react-redux'
-import {searchPhone} from '../actions'
+import { connect } from "react-redux";
+import { searchPhone } from "../actions";
 
 class Search extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange (event) {
+  handleChange(event) {
     this.setState({
       value: event.target.value
-    })
+    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.searchPhone(this.state.value)
+    this.props.searchPhone(this.state.value);
   }
 
-  render () {
+  render() {
     return (
-      <div className='well blosd'>
-        <div className='input-group'>
+      <div className="well blosd">
+        <div className="input-group">
           <form onSubmit={this.handleSubmit}>
             <input
               onChange={this.handleChange}
-              type='text'
-              className='form-control'
-              placeholder='Пошук'
+              type="text"
+              className="form-control"
+              placeholder="Пошук"
             />
           </form>
-          <span className='input-group-btn'>
-          <button className='btn btn-default'>
-            <span className='glyphicon glyphicon-search'/>
-          </button>
-        </span>
+          <span className="input-group-btn">
+            <button className="btn btn-default">
+              <span className="glyphicon glyphicon-search" />
+            </button>
+          </span>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -52,4 +52,4 @@ const mapDispatchToProps = {
   searchPhone
 };
 
-export default connect(null, mapDispatchToProps)(Search)
+export default connect(null, mapDispatchToProps)(Search);
